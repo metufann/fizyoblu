@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+fizyoblu.db
+fizyoblu.db-*
+appsettings.local.json
+
+# Node & Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
