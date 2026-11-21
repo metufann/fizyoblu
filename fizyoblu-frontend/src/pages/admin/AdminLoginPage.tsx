@@ -34,11 +34,13 @@ export const AdminLoginPage: React.FC = () => {
       <div className="min-h-screen bg-[#F4F1EA] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
           <Link to="/" className="inline-block">
-            <span className="font-serif text-3xl tracking-[0.25em] font-normal uppercase text-[#1B1E1C]">
-              FIZYOBLU
-            </span>
+            <img
+              src="/logo/logo-stacked.svg"
+              alt="FizyoBlu Logo"
+              className="h-24 w-auto mx-auto object-contain mb-3"
+            />
           </Link>
-          <h2 className="mt-3 text-xs uppercase tracking-[0.2em] font-semibold text-[#666157]">
+          <h2 className="mt-1 text-xs uppercase tracking-[0.2em] font-semibold text-[#666157]">
             Yönetim Paneli Girişi
           </h2>
         </div>

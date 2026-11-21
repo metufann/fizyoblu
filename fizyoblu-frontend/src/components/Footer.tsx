@@ -22,7 +22,17 @@ export const Footer: React.FC<FooterProps> = ({ settings, branches }) => {
           {/* Brand Col */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <span className="font-serif text-2xl tracking-[0.25em] font-normal uppercase text-[#FAF9F5]">
+              <img
+                src={settings?.site_logo_dark || '/logo/logo-horizontal-white.svg'}
+                alt="FizyoBlu Logo"
+                className="h-10 w-auto object-contain opacity-95 hover:opacity-100 transition-opacity"
+                onError={(e) => {
+                  (e.currentTarget as HTMLElement).style.display = 'none';
+                  const fallback = document.getElementById('footer-text-fallback');
+                  if (fallback) fallback.style.display = 'block';
+                }}
+              />
+              <span id="footer-text-fallback" className="hidden font-serif text-2xl tracking-[0.25em] font-normal uppercase text-[#FAF9F5]">
                 {settings?.logo_text || 'FIZYOBLU'}
               </span>
             </Link>

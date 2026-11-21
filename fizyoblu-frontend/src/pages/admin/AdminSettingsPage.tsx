@@ -61,6 +61,53 @@ export const AdminSettingsPage: React.FC = () => {
           {/* Section 1: Hero & Ana Sayfa */}
           <div className="bg-white border border-[#E5E0D5] p-6 space-y-4">
             <h3 className="font-serif text-lg text-[#1B1E1C] border-b border-[#EFECE5] pb-2">
+              Logo ve Marka Ayarları
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block uppercase tracking-wider text-[#6A655C] mb-1 font-medium">
+                  Açık Tema Logo URL (Header)
+                </label>
+                <input
+                  type="text"
+                  placeholder="/logo/logo-horizontal.svg"
+                  value={settings.site_logo || ''}
+                  onChange={(e) => handleChange('site_logo', e.target.value)}
+                  className="w-full border border-[#DDD8CE] px-3 py-2 text-xs focus:outline-none focus:border-[#2B382D]"
+                />
+              </div>
+
+              <div>
+                <label className="block uppercase tracking-wider text-[#6A655C] mb-1 font-medium">
+                  Koyu Tema Logo URL (Footer)
+                </label>
+                <input
+                  type="text"
+                  placeholder="/logo/logo-horizontal-white.svg"
+                  value={settings.site_logo_dark || ''}
+                  onChange={(e) => handleChange('site_logo_dark', e.target.value)}
+                  className="w-full border border-[#DDD8CE] px-3 py-2 text-xs focus:outline-none focus:border-[#2B382D]"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block uppercase tracking-wider text-[#6A655C] mb-1 font-medium">
+                Logo Alternatif Metni
+              </label>
+              <input
+                type="text"
+                value={settings.logo_text || 'FIZYOBLU'}
+                onChange={(e) => handleChange('logo_text', e.target.value)}
+                className="w-full border border-[#DDD8CE] px-3 py-2 text-xs focus:outline-none focus:border-[#2B382D]"
+              />
+            </div>
+          </div>
+
+          {/* Section 2: Hero & Ana Sayfa */}
+          <div className="bg-white border border-[#E5E0D5] p-6 space-y-4">
+            <h3 className="font-serif text-lg text-[#1B1E1C] border-b border-[#EFECE5] pb-2">
               Ana Sayfa & Hero Alanı
             </h3>
 

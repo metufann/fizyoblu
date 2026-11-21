@@ -35,6 +35,8 @@ public static class DbInitializer
                 new() { Key = "site_tagline", Value = "Klinik Pilates & Fizyoterapi Stüdyosu", Group = "General" },
                 new() { Key = "site_description", Value = "Bütüncül fizyoterapi ve kişiye özel klinik reformer pilates ile omurga sağlığınızı, hareket özgürlüğünüzü ve yaşam kalitenizi geri kazanın.", Group = "General" },
                 new() { Key = "logo_text", Value = "FIZYOBLU", Group = "General" },
+                new() { Key = "site_logo", Value = "/logo/logo-horizontal.svg", Group = "General" },
+                new() { Key = "site_logo_dark", Value = "/logo/logo-horizontal-white.svg", Group = "General" },
 
                 // Contact
                 new() { Key = "contact_phone", Value = "+90 (212) 444 89 20", Group = "Contact" },
