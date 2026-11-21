@@ -10,7 +10,8 @@ import type {
   SiteSettings
 } from '../types';
 
-const API_BASE = '/api';
+const envApiUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/$/, '') : '';
+const API_BASE = envApiUrl ? `${envApiUrl}/api` : '/api';
 
 function getStoredToken(): string | null {
   return localStorage.getItem('fizyoblu_token');
