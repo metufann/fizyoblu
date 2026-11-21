@@ -33,20 +33,14 @@ export const AdminLoginPage: React.FC = () => {
       <SEO title="Yönetici Girişi" />
       <div className="min-h-screen bg-[#F4F1EA] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
-          <Link to="/" className="inline-flex flex-col items-center group">
+          <Link to="/" className="inline-block group">
             <img
-              src="/logo/logo-icon.svg"
-              alt="FizyoBlu Vitruvian Logo"
-              className="h-24 w-24 object-contain mb-3 transition-transform group-hover:scale-105"
+              src="/logo/fizyoblu-logo-complete.svg"
+              alt="FizyoBlu - By Fizyoterapist Sağlıklı Yaşam Merkezi"
+              className="h-32 w-auto mx-auto object-contain mb-4 transition-transform group-hover:scale-105"
             />
-            <span className="font-serif text-3xl tracking-[0.22em] font-medium uppercase text-[#0E9AD7]">
-              FIZYOBLU
-            </span>
-            <span className="text-[11px] tracking-[0.25em] uppercase text-[#51AE30] font-semibold mt-1">
-              Klinik Pilates & Fizyoterapi
-            </span>
           </Link>
-          <h2 className="mt-4 text-xs uppercase tracking-[0.2em] font-semibold text-[#666157]">
+          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-[#666157]">
             Yönetim Paneli Girişi
           </h2>
         </div>

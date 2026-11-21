@@ -49,20 +49,12 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
         {/* Brand / Logo */}
-        <Link to="/" className="group flex items-center space-x-3.5 py-1">
+        <Link to="/" className="group flex items-center py-1">
           <img
-            src="/logo/logo-icon.svg"
-            alt="FizyoBlu Vitruvian Man Logo"
-            className="h-11 w-11 shrink-0 object-contain transition-transform group-hover:scale-105"
+            src="/logo/fizyoblu-logo-horizontal.svg"
+            alt="FizyoBlu - By Fizyoterapist Sağlıklı Yaşam Merkezi"
+            className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-[1.02]"
           />
-          <div className="flex flex-col">
-            <span className="font-serif text-2xl tracking-[0.18em] font-medium uppercase text-[#0E9AD7] group-hover:text-[#0C82B5] transition-colors leading-none">
-              FIZYOBLU
-            </span>
-            <span className="text-[10px] tracking-[0.22em] uppercase text-[#51AE30] font-semibold mt-1">
-              Klinik Pilates & Fizyoterapi
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Navigation */}
