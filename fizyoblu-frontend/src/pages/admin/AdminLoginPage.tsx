@@ -8,8 +8,8 @@ export const AdminLoginPage: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('admin@fizyoblu.com');
-  const [password, setPassword] = useState('FizyoBlu2024!');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -62,9 +62,10 @@ export const AdminLoginPage: React.FC = () => {
                   <input
                     type="email"
                     required
+                    placeholder="ornek@fizyoblu.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-[#FFFFFF] border border-[#DDD8CE] px-3.5 py-2.5 pl-9 text-xs text-[#222] focus:outline-none focus:border-[#2B382D]"
+                    className="w-full bg-[#FFFFFF] border border-[#DDD8CE] px-3.5 py-2.5 pl-9 text-xs text-[#222] placeholder:text-[#AAA] focus:outline-none focus:border-[#2B382D]"
                   />
                   <Mail className="w-4 h-4 text-[#8C877D] absolute left-3 top-3" />
                 </div>
@@ -78,18 +79,13 @@ export const AdminLoginPage: React.FC = () => {
                   <input
                     type="password"
                     required
+                    placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full bg-[#FFFFFF] border border-[#DDD8CE] px-3.5 py-2.5 pl-9 text-xs text-[#222] focus:outline-none focus:border-[#2B382D]"
+                    className="w-full bg-[#FFFFFF] border border-[#DDD8CE] px-3.5 py-2.5 pl-9 text-xs text-[#222] placeholder:text-[#AAA] focus:outline-none focus:border-[#2B382D]"
                   />
                   <Lock className="w-4 h-4 text-[#8C877D] absolute left-3 top-3" />
                 </div>
-              </div>
-
-              <div className="text-[11px] text-[#7A756B] bg-[#F4F1EA] p-3 border border-[#E5E0D5]">
-                <p className="font-medium text-[#444]">Varsayılan Giriş Bilgileri:</p>
-                <p>E-posta: <code>admin@fizyoblu.com</code></p>
-                <p>Şifre: <code>FizyoBlu2024!</code></p>
               </div>
 
               <button
