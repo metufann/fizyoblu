@@ -128,7 +128,14 @@ export const AdminServicesPage: React.FC = () => {
                       className="w-12 h-8 object-cover bg-neutral-100"
                     />
                   </td>
-                  <td className="py-2.5 px-4 font-medium text-[#1B1E1C]">{s.title}</td>
+                  <td className="py-2.5 px-4 font-medium text-[#1B1E1C]">
+                    <div>{s.title}</div>
+                    {s.complianceNotes && (
+                      <span className="text-[9px] bg-amber-50 text-amber-800 border border-amber-200 px-1 py-0.5 rounded font-medium mt-1 inline-block">
+                        Mevzuat Notu
+                      </span>
+                    )}
+                  </td>
                   <td className="py-2.5 px-4 text-[#7A756B]">/{s.slug}</td>
                   <td className="py-2.5 px-4 text-[#7A756B]">{s.order}</td>
                   <td className="py-2.5 px-4">
@@ -295,6 +302,19 @@ export const AdminServicesPage: React.FC = () => {
                     Aktif
                   </label>
                 </div>
+              </div>
+
+              <div>
+                <label className="block uppercase tracking-wider text-[#6A655C] mb-1 font-medium text-[11px]">
+                  Mevzuat & İnceleme Notu (Opsiyonel)
+                </label>
+                <textarea
+                  rows={2}
+                  value={editing.complianceNotes || ''}
+                  onChange={(e) => setEditing({ ...editing, complianceNotes: e.target.value })}
+                  placeholder="Sağlık tanıtım mevzuatı veya hekim inceleme açıklamaları..."
+                  className="w-full border border-[#DDD8CE] px-3 py-2 text-xs focus:outline-none focus:border-[#2B382D]"
+                />
               </div>
 
               <div className="flex justify-end space-x-3 pt-4 border-t border-[#EFECE5]">

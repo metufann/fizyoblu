@@ -97,16 +97,16 @@ export const HomePage: React.FC<HomePageProps> = ({ settings, branches }) => {
               {/* Trust Indicators */}
               <div className="pt-8 grid grid-cols-3 gap-6 border-t border-[#E8E4DC] max-w-lg">
                 <div>
+                  <p className="font-serif text-2xl text-[#2B382D]">2018</p>
+                  <p className="text-xs text-[#706B62] mt-0.5 font-light">Kuruluş Yılı (Ankara)</p>
+                </div>
+                <div>
                   <p className="font-serif text-2xl text-[#2B382D]">1:1</p>
-                  <p className="text-xs text-[#706B62] mt-0.5 font-light">Özel Klinik Seans</p>
+                  <p className="text-xs text-[#706B62] mt-0.5 font-light">Kişisel Postür Analizi</p>
                 </div>
                 <div>
                   <p className="font-serif text-2xl text-[#2B382D]">%100</p>
                   <p className="text-xs text-[#706B62] mt-0.5 font-light">Fizyoterapist Kadro</p>
-                </div>
-                <div>
-                  <p className="font-serif text-2xl text-[#2B382D]">2</p>
-                  <p className="text-xs text-[#706B62] mt-0.5 font-light">Merkezi Stüdyo</p>
                 </div>
               </div>
             </div>
@@ -130,39 +130,49 @@ export const HomePage: React.FC<HomePageProps> = ({ settings, branches }) => {
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-3xl mb-16">
             <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-[#6B7566] block mb-3">
-              YAKLAŞIMIMIZ
+              KURUMSAL FELSEFEMİZ
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#1B1E1C] font-normal leading-tight">
-              {settings?.about_preview_title || 'Ağrısız, Güçlü ve Dengeli Bir Yaşam İçin Buradayız'}
+              {settings?.about_preview_title || '“Dün Olduğundan Daha İyi Ol”'}
             </h2>
             <p className="text-sm sm:text-base text-[#5C574E] mt-4 leading-relaxed font-light">
               {settings?.about_preview_text ||
-                'FizyoBlu olarak klasik egzersiz kalıplarının ötesine geçiyoruz. Her bireyin kas-iskelet yapısı, postür alışkanlıkları ve yaşam biçimi benzersizdir. Detaylı klinik değerlendirmelerle bedeninize özel hazırlanan egzersiz programları ile kalıcı omurga sağlığı ve kondisyon hedefliyoruz.'}
+                'FizyoBlu Sağlıklı Yaşam Merkezi, Fizyoterapist Selçuk Atakan Şener tarafından “dün olduğundan daha iyi ol” sloganıyla 2018 yılında Çukurambar, Ankara’da kurulmuştur. Deneyimli ve konusunda uzman fizyoterapistlerimiz; öncelikle kişisel postür analizi ile danışanlarımızın yaşam koşullarını ve rahatsızlıklarını göz önüne alarak vücut yapılarına en uygun programı belirlemektedir.'}
             </p>
+
+            {/* Joseph Pilates Quote Snippet */}
+            <div className="mt-8 pt-6 border-t border-[#DFD9CD]">
+              <p className="font-serif text-base sm:text-lg text-[#2B382D] italic">
+                “10 derste farkı hissedecek, 20 derste farkı görecek ve 30 derste farklı bir bedene sahip olacaksınız.”
+              </p>
+              <span className="text-[11px] text-[#7A756C] uppercase tracking-wider mt-1 block">
+                — Joseph Pilates
+              </span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-3">
               <Activity className="w-6 h-6 text-[#4A5D4E]" />
-              <h3 className="font-serif text-xl text-[#1B1E1C]">Detaylı Klinik Değerlendirme</h3>
+              <h3 className="font-serif text-xl text-[#1B1E1C]">Kişisel Postür Analizi</h3>
               <p className="text-xs sm:text-sm text-[#6A655C] leading-relaxed font-light">
-                Harekete başlamadan önce duruş analizi, eklem hareket açıklığı ve kas dengesizlikleri tıp kökenli fizyoterapistlerimiz tarafından haritalandırılır.
+                Her seans öncesinde vücut diziliş ve düzeni kontrol edilir; danışanın yaşam koşulları ve mevcut postüral deviasyonları haritalandırılır.
               </p>
             </div>
 
             <div className="space-y-3">
               <ShieldCheck className="w-6 h-6 text-[#4A5D4E]" />
-              <h3 className="font-serif text-xl text-[#1B1E1C]">Kişiye Özel Birebir Seanslar</h3>
+              <h3 className="font-serif text-xl text-[#1B1E1C]">Kişiye Özel Klinik Program</h3>
               <p className="text-xs sm:text-sm text-[#6A655C] leading-relaxed font-light">
-                Her seans yalnızca sizin hedeflerinize ve klinik durumunuza göre şekillenir. Bel fıtığı, skolyoz ve boyun düzleşmesinde güvenli ilerleme sağlanır.
+                Klinik pilates, reformer, manuel terapi ve kinezyolojik bantlama ile bedeninize en uygun, hedefe odaklı medikal planlama yapılır.
               </p>
             </div>
 
             <div className="space-y-3">
               <Award className="w-6 h-6 text-[#4A5D4E]" />
-              <h3 className="font-serif text-xl text-[#1B1E1C]">Sertifikalı ve Yetkin Kadro</h3>
+              <h3 className="font-serif text-xl text-[#1B1E1C]">Uzman Fizyoterapist Kadro</h3>
               <p className="text-xs sm:text-sm text-[#6A655C] leading-relaxed font-light">
-                Tüm eğitmenlerimiz üniversite düzeyinde fizyoterapi ve rehabilitasyon eğitimi almış, uluslararası medikal pilates akreditasyonlarına sahip uzmanlardır.
+                Kurucumuz Fzt. Selçuk Atakan Şener öncülüğünde, tüm uygulamalar bilimsel altyapıya sahip lisanslı fizyoterapistler tarafından yürütülür.
               </p>
             </div>
           </div>

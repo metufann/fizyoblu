@@ -144,15 +144,22 @@ export const AdminBlogPage: React.FC = () => {
                     {new Date(p.publishedAt).toLocaleDateString('tr-TR')}
                   </td>
                   <td className="py-2.5 px-4">
-                    {p.isPublished ? (
-                      <span className="text-[10px] bg-[#E8F5E9] text-[#2E7D32] px-1.5 py-0.5 rounded font-medium">
-                        Yayında
-                      </span>
-                    ) : (
-                      <span className="text-[10px] bg-[#ECEFF1] text-[#546E7A] px-1.5 py-0.5 rounded font-medium">
-                        Taslak
-                      </span>
-                    )}
+                    <div className="flex flex-col gap-1 items-start">
+                      {p.isPublished ? (
+                        <span className="text-[10px] bg-[#E8F5E9] text-[#2E7D32] px-1.5 py-0.5 rounded font-medium">
+                          Yayında
+                        </span>
+                      ) : (
+                        <span className="text-[10px] bg-[#ECEFF1] text-[#546E7A] px-1.5 py-0.5 rounded font-medium">
+                          Taslak
+                        </span>
+                      )}
+                      {p.complianceNotes && (
+                        <span className="text-[9px] bg-amber-50 text-amber-800 border border-amber-200 px-1 py-0.5 rounded font-medium">
+                          İnceleme Bekliyor
+                        </span>
+                      )}
+                    </div>
                   </td>
                   <td className="py-2.5 px-4 text-right space-x-2">
                     <button
@@ -197,6 +204,14 @@ export const AdminBlogPage: React.FC = () => {
             </div>
 
             <form onSubmit={handleSave} className="space-y-4 text-xs">
+              {editing.complianceNotes && (
+                <div className="p-3 bg-amber-50 border border-amber-200 text-amber-900 rounded space-y-1">
+                  <div className="font-semibold flex items-center">
+                    <span>⚠️ Sağlık ve Reklam Mevzuatı İnceleme Notu</span>
+                  </div>
+                  <p className="text-[11px] leading-relaxed">{editing.complianceNotes}</p>
+                </div>
+              )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block uppercase tracking-wider text-[#6A655C] mb-1 font-medium">
@@ -307,6 +322,35 @@ export const AdminBlogPage: React.FC = () => {
                       className="w-full border border-[#DDD8CE] bg-white px-3 py-1.5 text-xs focus:outline-none"
                     />
                   </div>
+                </div>
+              </div>
+
+              {/* Compliance Notes & Publishing Status */}
+              <div className="p-4 bg-[#FAF9F6] border border-[#E5E0D5] space-y-3">
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="isPublished"
+                    checked={editing.isPublished ?? true}
+                    onChange={(e) => setEditing({ ...editing, isPublished: e.target.checked })}
+                    className="w-4 h-4 rounded border-[#DDD8CE] text-[#2B382D] focus:ring-0"
+                  />
+                  <label htmlFor="isPublished" className="text-xs text-[#1B1E1C] font-medium cursor-pointer">
+                    Yayında (İşaret kaldırıldığında yazı taslak olarak saklanır, sitede görünmez)
+                  </label>
+                </div>
+
+                <div>
+                  <label className="block uppercase tracking-wider text-[#6A655C] mb-1 font-medium text-[11px]">
+                    Mevzuat & Denetim Notları (Opsiyonel)
+                  </label>
+                  <textarea
+                    rows={2}
+                    value={editing.complianceNotes || ''}
+                    onChange={(e) => setEditing({ ...editing, complianceNotes: e.target.value })}
+                    placeholder="Sağlık tanıtım mevzuatı veya uzman hekim inceleme açıklamaları..."
+                    className="w-full border border-[#DDD8CE] bg-white px-3 py-1.5 text-xs focus:outline-none focus:border-[#2B382D]"
+                  />
                 </div>
               </div>
 

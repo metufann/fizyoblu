@@ -39,6 +39,9 @@ public class BlogPost
     public bool IsPublished { get; set; } = true;
     public bool IsFeatured { get; set; } = false;
 
+    [MaxLength(1000)]
+    public string? ComplianceNotes { get; set; } // Sağlık ve reklam mevzuatı inceleme notları
+
     public DateTime PublishedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
 }

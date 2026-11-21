@@ -60,7 +60,8 @@ public class BlogPostsController : ControllerBase
                 b.Id, b.Title, b.Slug, b.Summary, b.CoverImageUrl,
                 b.CategoryId, b.Category != null ? b.Category.Name : null,
                 b.Category != null ? b.Category.Slug : null,
-                b.Author, b.ReadTimeMinutes, b.IsPublished, b.IsFeatured, b.PublishedAt
+                b.Author, b.ReadTimeMinutes, b.IsPublished, b.IsFeatured,
+                b.ComplianceNotes, b.PublishedAt
             ))
             .ToListAsync();
 
@@ -79,7 +80,7 @@ public class BlogPostsController : ControllerBase
                 b.CategoryId, b.Category != null ? b.Category.Name : null,
                 b.Category != null ? b.Category.Slug : null,
                 b.Author, b.ReadTimeMinutes, b.MetaTitle, b.MetaDescription,
-                b.IsPublished, b.IsFeatured, b.PublishedAt
+                b.IsPublished, b.IsFeatured, b.ComplianceNotes, b.PublishedAt
             ))
             .FirstOrDefaultAsync();
 
@@ -91,7 +92,7 @@ public class BlogPostsController : ControllerBase
         return Ok(new { success = true, data = post });
     }
 
-    // Admin: List all posts
+    // Admin: List all posts (including drafts awaiting review)
     [Authorize]
     [HttpGet("admin/all")]
     public async Task<IActionResult> GetAllForAdmin()
@@ -104,7 +105,7 @@ public class BlogPostsController : ControllerBase
                 b.CategoryId, b.Category != null ? b.Category.Name : null,
                 b.Category != null ? b.Category.Slug : null,
                 b.Author, b.ReadTimeMinutes, b.MetaTitle, b.MetaDescription,
-                b.IsPublished, b.IsFeatured, b.PublishedAt
+                b.IsPublished, b.IsFeatured, b.ComplianceNotes, b.PublishedAt
             ))
             .ToListAsync();
 
@@ -139,13 +140,14 @@ public class BlogPostsController : ControllerBase
             MetaDescription = request.MetaDescription?.Trim(),
             IsPublished = request.IsPublished,
             IsFeatured = request.IsFeatured,
+            ComplianceNotes = request.ComplianceNotes?.Trim(),
             PublishedAt = DateTime.UtcNow
         };
 
         _context.BlogPosts.Add(post);
         await _context.SaveChangesAsync();
 
-        return Ok(new { success = true, message = "Blog yazısı yayınlandı.", data = post });
+        return Ok(new { success = true, message = "Blog yazısı oluşturuldu.", data = post });
     }
 
     // Admin: Update blog post
@@ -177,6 +179,7 @@ public class BlogPostsController : ControllerBase
         post.MetaDescription = request.MetaDescription?.Trim();
         post.IsPublished = request.IsPublished;
         post.IsFeatured = request.IsFeatured;
+        post.ComplianceNotes = request.ComplianceNotes?.Trim();
         post.UpdatedAt = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();

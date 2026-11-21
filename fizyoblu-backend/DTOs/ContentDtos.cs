@@ -13,7 +13,8 @@ public record ServiceDto(
     int Order,
     bool IsActive,
     bool IsFeatured,
-    string? MetaDescription
+    string? MetaDescription,
+    string? ComplianceNotes
 );
 
 public record CreateServiceRequest(
@@ -25,7 +26,8 @@ public record CreateServiceRequest(
     int Order = 0,
     bool IsActive = true,
     bool IsFeatured = false,
-    string? MetaDescription = null
+    string? MetaDescription = null,
+    string? ComplianceNotes = null
 );
 
 public record UpdateServiceRequest(
@@ -37,7 +39,8 @@ public record UpdateServiceRequest(
     int Order,
     bool IsActive,
     bool IsFeatured,
-    string? MetaDescription
+    string? MetaDescription,
+    string? ComplianceNotes = null
 );
 
 // Branches
@@ -159,6 +162,7 @@ public record BlogPostDto(
     string? MetaDescription,
     bool IsPublished,
     bool IsFeatured,
+    string? ComplianceNotes,
     DateTime PublishedAt
 );
 
@@ -175,6 +179,7 @@ public record BlogPostSummaryDto(
     int ReadTimeMinutes,
     bool IsPublished,
     bool IsFeatured,
+    string? ComplianceNotes,
     DateTime PublishedAt
 );
 
@@ -190,7 +195,8 @@ public record CreateBlogPostRequest(
     string? MetaTitle = null,
     string? MetaDescription = null,
     bool IsPublished = true,
-    bool IsFeatured = false
+    bool IsFeatured = false,
+    string? ComplianceNotes = null
 );
 
 public record UpdateBlogPostRequest(
@@ -205,7 +211,8 @@ public record UpdateBlogPostRequest(
     string? MetaTitle,
     string? MetaDescription,
     bool IsPublished,
-    bool IsFeatured
+    bool IsFeatured,
+    string? ComplianceNotes = null
 );
 
 // Contact Message

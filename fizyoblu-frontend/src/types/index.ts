@@ -9,6 +9,7 @@ export interface Service {
   isActive: boolean;
   isFeatured: boolean;
   metaDescription?: string;
+  complianceNotes?: string;
 }
 
 export interface Branch {
@@ -65,6 +66,7 @@ export interface BlogPost {
   metaDescription?: string;
   isPublished: boolean;
   isFeatured: boolean;
+  complianceNotes?: string;
   publishedAt: string;
 }
 

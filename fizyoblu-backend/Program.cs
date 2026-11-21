@@ -184,6 +184,13 @@ using (var scope = app.Services.CreateScope())
     {
         logger.LogInformation("Veritabanı kontrol ediliyor ({Provider})...", usePostgres ? "PostgreSQL" : "SQLite");
         context.Database.EnsureCreated();
+
+        // Ensure new compliance columns exist on SQLite / PostgreSQL if table was previously created
+        try { context.Database.ExecuteSqlRaw("ALTER TABLE \"BlogPosts\" ADD COLUMN \"ComplianceNotes\" TEXT;"); } catch { }
+        try { context.Database.ExecuteSqlRaw("ALTER TABLE BlogPosts ADD COLUMN ComplianceNotes TEXT;"); } catch { }
+        try { context.Database.ExecuteSqlRaw("ALTER TABLE \"Services\" ADD COLUMN \"ComplianceNotes\" TEXT;"); } catch { }
+        try { context.Database.ExecuteSqlRaw("ALTER TABLE Services ADD COLUMN ComplianceNotes TEXT;"); } catch { }
+
         await DbInitializer.SeedAsync(context, app.Configuration);
         logger.LogInformation("Veritabanı hazır ve seed verileri tamamlandı.");
     }

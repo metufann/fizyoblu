@@ -29,6 +29,9 @@ public class ServiceItem
     [MaxLength(160)]
     public string? MetaDescription { get; set; }
 
+    [MaxLength(1000)]
+    public string? ComplianceNotes { get; set; } // Sağlık mevzuatı ve reklam inceleme notları
+
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
 }

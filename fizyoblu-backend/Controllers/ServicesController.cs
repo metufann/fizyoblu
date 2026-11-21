@@ -44,7 +44,7 @@ public class ServicesController : ControllerBase
             .OrderBy(s => s.Order)
             .Select(s => new ServiceDto(
                 s.Id, s.Title, s.Slug, s.Summary, s.Description, s.ImageUrl,
-                s.Order, s.IsActive, s.IsFeatured, s.MetaDescription
+                s.Order, s.IsActive, s.IsFeatured, s.MetaDescription, s.ComplianceNotes
             ))
             .ToListAsync();
 
@@ -59,7 +59,7 @@ public class ServicesController : ControllerBase
             .Where(s => s.IsActive && s.Slug == slug)
             .Select(s => new ServiceDto(
                 s.Id, s.Title, s.Slug, s.Summary, s.Description, s.ImageUrl,
-                s.Order, s.IsActive, s.IsFeatured, s.MetaDescription
+                s.Order, s.IsActive, s.IsFeatured, s.MetaDescription, s.ComplianceNotes
             ))
             .FirstOrDefaultAsync();
 
@@ -80,7 +80,7 @@ public class ServicesController : ControllerBase
             .OrderBy(s => s.Order)
             .Select(s => new ServiceDto(
                 s.Id, s.Title, s.Slug, s.Summary, s.Description, s.ImageUrl,
-                s.Order, s.IsActive, s.IsFeatured, s.MetaDescription
+                s.Order, s.IsActive, s.IsFeatured, s.MetaDescription, s.ComplianceNotes
             ))
             .ToListAsync();
 
@@ -113,6 +113,7 @@ public class ServicesController : ControllerBase
             IsActive = request.IsActive,
             IsFeatured = request.IsFeatured,
             MetaDescription = request.MetaDescription,
+            ComplianceNotes = request.ComplianceNotes?.Trim(),
             CreatedAt = DateTime.UtcNow
         };
 
@@ -148,6 +149,7 @@ public class ServicesController : ControllerBase
         service.IsActive = request.IsActive;
         service.IsFeatured = request.IsFeatured;
         service.MetaDescription = request.MetaDescription;
+        service.ComplianceNotes = request.ComplianceNotes?.Trim();
         service.UpdatedAt = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();
