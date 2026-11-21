@@ -50,9 +50,8 @@ public static class DbInitializer
             new() { Key = "working_hours_weekend", Value = "Cumartesi: 09:00 - 18:00 | Pazar: Dinlenme", Group = "Contact" },
 
             // Social
-            new() { Key = "social_instagram", Value = "https://instagram.com/fizyoblu", Group = "Social" },
+            new() { Key = "social_instagram", Value = "https://instagram.com/fizyoblucukurambar", Group = "Social" },
             new() { Key = "social_facebook", Value = "https://facebook.com/fizyoblu", Group = "Social" },
-            new() { Key = "social_linkedin", Value = "https://linkedin.com/company/fizyoblu", Group = "Social" },
             new() { Key = "social_youtube", Value = "https://youtube.com/@fizyoblu", Group = "Social" },
 
             // Hero & Home Narrative
@@ -110,8 +109,8 @@ public static class DbInitializer
                 Bio = "FizyoBlu Sağlıklı Yaşam Merkezi'nin kurucusudur. 2018 yılında Ankara Çukurambar'da 'Dün olduğundan daha iyi ol' felsefesiyle yola çıkan Şener, klinik pilates, reformer pilates, kişisel postür analizi, manuel terapi ve nörolojik rehabilitasyon alanlarında danışanlarına kanıta dayalı fizyoterapi yaklaşımlarıyla rehberlik etmektedir.",
                 ImageUrl = "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
                 Specialities = "Klinik Pilates, Postür Analizi, Manuel Terapi, Nörolojik Rehabilitasyon, Sporcu Sağlığı",
-                Instagram = "fizyoblu",
-                LinkedIn = "selcuk-atakan-sener",
+                Instagram = "fizyoblucukurambar",
+                LinkedIn = null,
                 Order = 1,
                 IsActive = true
             });

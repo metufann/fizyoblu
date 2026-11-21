@@ -33,26 +33,14 @@ export const Footer: React.FC<FooterProps> = ({ settings, branches }) => {
                 'Kişiye özel klinik pilates, omurga sağlığı ve fizyoterapi yaklaşımlarıyla bedenin doğal dengesini ve hareket özgürlüğünü inşa ediyoruz.'}
             </p>
             <div className="pt-2 flex items-center space-x-4 text-xs tracking-wider text-[#B8B3A9]">
-              {settings?.social_instagram && (
-                <a
-                  href={settings.social_instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors flex items-center"
-                >
-                  Instagram <ArrowUpRight className="w-3 h-3 ml-0.5" />
-                </a>
-              )}
-              {settings?.social_linkedin && (
-                <a
-                  href={settings.social_linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors flex items-center"
-                >
-                  LinkedIn <ArrowUpRight className="w-3 h-3 ml-0.5" />
-                </a>
-              )}
+              <a
+                href={settings?.social_instagram || 'https://instagram.com/fizyoblucukurambar'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors flex items-center"
+              >
+                Instagram <ArrowUpRight className="w-3 h-3 ml-0.5" />
+              </a>
             </div>
           </div>
 

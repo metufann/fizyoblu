@@ -242,20 +242,9 @@ export const AdminSettingsPage: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  placeholder="https://instagram.com/fizyoblucukurambar"
                   value={settings.social_instagram || ''}
                   onChange={(e) => handleChange('social_instagram', e.target.value)}
-                  className="w-full border border-[#DDD8CE] px-3 py-2 text-xs focus:outline-none focus:border-[#2B382D]"
-                />
-              </div>
-
-              <div>
-                <label className="block uppercase tracking-wider text-[#6A655C] mb-1 font-medium">
-                  LinkedIn Linki
-                </label>
-                <input
-                  type="text"
-                  value={settings.social_linkedin || ''}
-                  onChange={(e) => handleChange('social_linkedin', e.target.value)}
                   className="w-full border border-[#DDD8CE] px-3 py-2 text-xs focus:outline-none focus:border-[#2B382D]"
                 />
               </div>
