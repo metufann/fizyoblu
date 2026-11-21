@@ -21,20 +21,20 @@ export const Footer: React.FC<FooterProps> = ({ settings, branches }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16 border-b border-[#2A2E2B]">
           {/* Brand Col */}
           <div className="space-y-4">
-            <Link to="/" className="inline-block">
+            <Link to="/" className="inline-flex items-center space-x-3.5 group">
               <img
-                src={settings?.site_logo_dark || '/logo/logo-horizontal-white.svg'}
+                src="/logo/logo-icon.svg"
                 alt="FizyoBlu Logo"
-                className="h-10 w-auto object-contain opacity-95 hover:opacity-100 transition-opacity"
-                onError={(e) => {
-                  (e.currentTarget as HTMLElement).style.display = 'none';
-                  const fallback = document.getElementById('footer-text-fallback');
-                  if (fallback) fallback.style.display = 'block';
-                }}
+                className="h-11 w-11 shrink-0 object-contain transition-transform group-hover:scale-105"
               />
-              <span id="footer-text-fallback" className="hidden font-serif text-2xl tracking-[0.25em] font-normal uppercase text-[#FAF9F5]">
-                {settings?.logo_text || 'FIZYOBLU'}
-              </span>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl tracking-[0.18em] font-medium uppercase text-[#FAF9F5] group-hover:text-[#0E9AD7] transition-colors leading-none">
+                  FIZYOBLU
+                </span>
+                <span className="text-[10px] tracking-[0.22em] uppercase text-[#66C044] font-semibold mt-1">
+                  Klinik Pilates & Fizyoterapi
+                </span>
+              </div>
             </Link>
             <p className="text-sm leading-relaxed text-[#9B978F] font-light max-w-sm">
               {settings?.site_description ||

@@ -48,15 +48,20 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
         <div>
           {/* Logo / Admin Brand */}
           <div className="p-6 border-b border-[#2C302D]">
-            <Link to="/" target="_blank" className="block">
+            <Link to="/" target="_blank" className="flex items-center space-x-3 group">
               <img
-                src="/logo/logo-horizontal-white.svg"
+                src="/logo/logo-icon.svg"
                 alt="FizyoBlu Logo"
-                className="h-8 w-auto object-contain mb-2"
+                className="h-9 w-9 shrink-0 object-contain"
               />
-              <span className="block text-[10px] tracking-[0.2em] uppercase text-[#888379] mt-0.5">
-                Yönetim Paneli
-              </span>
+              <div className="flex flex-col">
+                <span className="font-serif text-lg tracking-[0.15em] font-medium uppercase text-[#FAF9F5] group-hover:text-[#0E9AD7] transition-colors leading-none">
+                  FIZYOBLU
+                </span>
+                <span className="block text-[9px] tracking-[0.2em] uppercase text-[#66C044] font-semibold mt-1">
+                  Yönetim Paneli
+                </span>
+              </div>
             </Link>
           </div>
 

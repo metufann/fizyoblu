@@ -49,23 +49,17 @@ export const Navbar: React.FC<NavbarProps> = ({ settings }) => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
         {/* Brand / Logo */}
-        <Link to="/" className="group flex items-center py-1">
+        <Link to="/" className="group flex items-center space-x-3.5 py-1">
           <img
-            src={settings?.site_logo || '/logo/logo-horizontal.svg'}
-            alt={settings?.logo_text || 'FizyoBlu Logo'}
-            className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
-            onError={(e) => {
-              // Fallback to text if image fails
-              (e.currentTarget as HTMLElement).style.display = 'none';
-              const fallback = document.getElementById('navbar-text-fallback');
-              if (fallback) fallback.style.display = 'flex';
-            }}
+            src="/logo/logo-icon.svg"
+            alt="FizyoBlu Vitruvian Man Logo"
+            className="h-11 w-11 shrink-0 object-contain transition-transform group-hover:scale-105"
           />
-          <div id="navbar-text-fallback" className="hidden flex-col">
-            <span className="font-serif text-2xl tracking-[0.2em] font-normal uppercase text-[#1C2024]">
-              {settings?.logo_text || 'FIZYOBLU'}
+          <div className="flex flex-col">
+            <span className="font-serif text-2xl tracking-[0.18em] font-medium uppercase text-[#0E9AD7] group-hover:text-[#0C82B5] transition-colors leading-none">
+              FIZYOBLU
             </span>
-            <span className="text-[10px] tracking-[0.25em] uppercase text-[#736E65] font-light">
+            <span className="text-[10px] tracking-[0.22em] uppercase text-[#51AE30] font-semibold mt-1">
               Klinik Pilates & Fizyoterapi
             </span>
           </div>
